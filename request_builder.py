@@ -15,6 +15,14 @@ class AirbnbRequestBuilder:
         endpoint = 'users/%s' % user_id
         return self._build_request('GET', endpoint, {})
 
+    def user_listings(self, user_id, limit=50, offset=0):
+        params = {
+            'user_id': user_id,
+            '_limit': limit,
+            '_offset': offset
+        }
+        return self._build_request('GET', 'listings', params)
+
     def _build_request(self, method, endpoint, params):
         params['_format'] = 'v1_legacy_show'
         params['client_id'] = self.client_id
