@@ -3,7 +3,7 @@ import urllib
 
 class AirbnbRequestBuilder:
 
-    BASE_URL = 'https://api.airbnb.com/v2'
+    BASE_URL = 'http://api.airbnb.com/v2'
 
     def __init__(self, client_id, locale='en-US', currency='USD'):
         self.client_id = client_id
