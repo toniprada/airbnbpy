@@ -10,6 +10,13 @@ class AirbnbRequestBuilder:
         self.locale = locale
         self.currency = currency
 
+    def listings(self, location, page=0):
+        params = {
+            'location': location,
+            'section_offset': page
+        }
+        return self._build_request('GET', 'explore_tabs', params)
+
     def user(self, user_id, api_format='v1_legacy_show'):
         params = {
             '_format': api_format
